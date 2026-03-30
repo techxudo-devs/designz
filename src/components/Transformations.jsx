@@ -30,7 +30,7 @@ const transformations = [
     title: "bromley",
     location: "London UK",
     description: "Refurbishing the most prominent areas of a home is one of the most effective ways to increase its value. Spaces such as the kitchen and living area shape first impressions and play a major role in how a property is perceived by both homeowners and investors.",
-    before: transformBefore3.src, 
+    before: <transformBefore3 className="src">l</transformBefore3>, 
     after:  transfromAfter3.src, 
   },
 ];
@@ -134,6 +134,13 @@ const CompareSlider = ({ before, after, title }) => {
 
 // ─── MAIN COMPONENT ───────────────────────────────────────────────────────────
 const Transformations = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section id="transformations" className="bg-[#faf8f5] py-10 px-6 md:px-12 text-[#2a1f1f] overflow-hidden">
       {/* Font Imports - Can also be added to your global CSS */}
@@ -202,12 +209,12 @@ const Transformations = () => {
                   {project.description}
                 </p>
 
-                <a
-                  href=""
-                  className="text-xs tracking-wider uppercase font-normal text-[#2a1f1f] border-b border-[#2a1f1f]/30 pb-1 hover:scale-95 transition-all duration-300"
+                <button
+                  onClick={scrollToContact}
+                  className="text-xs tracking-wider uppercase font-normal text-[#2a1f1f] border-b border-[#2a1f1f]/30 pb-1 hover:scale-95 transition-all duration-300 cursor-pointer"
                 >
                   Explore Creativity
-                </a>
+                </button>
               </div>
             </motion.div>
           );
@@ -220,12 +227,12 @@ const Transformations = () => {
           Ready to redefine your home?
         </p>
 
-        <a
-          href=""
-          className="bg-[#2a1f1f] text-[#f0ebe3] px-10 py-5 text-xs tracking-wider uppercase font-light hover:scale-95 transition-all duration-300 rounded-2xl"
+        <button
+          onClick={scrollToContact}
+          className="bg-[#2a1f1f] text-[#f0ebe3] px-10 py-5 text-xs tracking-wider uppercase font-light hover:scale-95 transition-all duration-300 rounded-2xl cursor-pointer"
         >
           Consult Us for Free
-        </a>
+        </button>
       </div>
     </section>
   );

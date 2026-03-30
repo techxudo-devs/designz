@@ -2,14 +2,25 @@
 
 import React, { useEffect, useState } from 'react';
 
+import hero1 from "@/assets/hero1.webp"
+import hero2 from "@/assets/hero2.webp"
+import hero3 from "@/assets/hero3.webp"
+
 const heroImages = [
-  'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=2000',
-  'https://images.squarespace-cdn.com/content/v1/60a3990845075b6c2e920b7f/53670346-140f-4aee-b626-f0ed1d5dd530/Rachel_Usher_Interior_Design_Games_Room_01_web_ready.jpg?format=1500w',
-  'https://images.squarespace-cdn.com/content/v1/60a3990845075b6c2e920b7f/8bb5c748-5d90-4e06-9a7c-bfcff2bad959/Rachel_Usher_Interior_Design_Hampton_38_web_ready.jpg?format=1500w',
+  hero1.src,
+  hero2.src,
+  hero3.src
 ];
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -69,15 +80,15 @@ const Hero = () => {
           {/* CTA - Updated Hrefs */}
           <div className="animate-fade-up-delayed-3 mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
             {/* Book a Consultation -> Scrolls to Contact Us */}
-            <a
-              href="#contact-us"
-              className="group relative inline-flex items-center justify-center overflow-hidden border border-white/35 px-8 py-4 transition-all duration-500 hover:border-white"
+            <button
+              onClick={scrollToContact}
+              className="group relative inline-flex items-center justify-center overflow-hidden border border-white/35 px-8 py-4 transition-all duration-500 hover:border-white cursor-pointer"
             >
               <span className="relative z-10 text-xs font-medium uppercase tracking-wider text-white transition-colors duration-500 group-hover:text-black">
                 Book Free Consultation
               </span>
               <span className="absolute inset-0 translate-y-[101%] bg-white transition-transform duration-500 ease-in-out group-hover:translate-y-0" />
-            </a>
+            </button>
           </div>
         </div>
       </div>

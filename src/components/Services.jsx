@@ -32,6 +32,13 @@ const services = [
 ];
 
 const Services = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="bg-gradient-to-br from-gray-50 to-gray-100 py-14 border-t border-gray-100">
       <div className="mx-auto max-w-7xl px-6 lg:px-12">
@@ -68,13 +75,13 @@ const Services = () => {
                 </p>
 
                 {/* Minimalist Action Link */}
-                <a
-                  href="#"
-                  className="mt-auto flex items-center gap-2 text-sm font-semibold text-gray-900"
+                <button
+                  onClick={scrollToContact}
+                  className="mt-auto flex items-center gap-2 text-sm font-semibold text-gray-900 cursor-pointer"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1" />
-                </a>
+                </button>
               </div>
 
               {/* Subtle Decorative Line (Desktop only) */}
@@ -105,13 +112,13 @@ const Services = () => {
                 </p>
 
                 {/* Minimalist Action Link */}
-                <a
-                  href="#"
-                  className="mt-auto flex items-center gap-2 text-sm font-semibold text-gray-900"
+                <button
+                  onClick={scrollToContact}
+                  className="mt-auto flex items-center gap-2 text-sm font-semibold text-gray-900 cursor-pointer"
                 >
                   Learn more
                   <ArrowRight className="w-4 h-4 transition-all duration-300 group-hover:translate-x-1" />
-                </a>
+                </button>
               </div>
             </div>
           ))}

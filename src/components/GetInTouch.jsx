@@ -1,7 +1,13 @@
 import React from 'react';
-import Link from 'next/link';
 
 const GetInTouch = () => {
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className="bg-white w-full py-16 md:py-24 px-6 md:px-16 lg:px-24">
       <div className="max-w-[1400px] mx-auto flex flex-col md:flex-row items-center gap-12 lg:gap-20">
@@ -19,12 +25,12 @@ const GetInTouch = () => {
             extremely proud of. If you would like to discuss your project further please get in touch.
           </p>
 
-          <Link 
-            href="/contact" 
-            className="inline-block border border-[#3d2b2b] px-10 py-4 text-[11px] md:text-xs uppercase tracking-[0.3em] font-medium hover:bg-[#3d2b2b] hover:text-white transition-all duration-300"
+          <button
+            onClick={scrollToContact}
+            className="inline-block border border-[#3d2b2b] px-10 py-4 text-[11px] md:text-xs uppercase tracking-[0.3em] font-medium hover:bg-[#3d2b2b] hover:text-white transition-all duration-300 cursor-pointer"
           >
             Book a discovery call
-          </Link>
+          </button>
         </div>
 
         {/* --- Right Side: Tall Image with Spacing --- */}
