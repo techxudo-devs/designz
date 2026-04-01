@@ -13,7 +13,7 @@ import Showcase from '@/components/Showcase'
 const Home = () => {
   return (
     <main className="overflow-hidden">
-      {/* <Navbar /> */}
+      <Navbar />
       <Hero />
       
       <section id="about-us">
