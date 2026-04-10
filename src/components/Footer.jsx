@@ -23,6 +23,7 @@ export default function Footer() {
               </p>
             </div>
 
+
             <div className="flex items-start gap-3 text-left">
               <MapPin className="text-white mt-1 shrink-0" size={24} />
               <p className="leading-relaxed">
